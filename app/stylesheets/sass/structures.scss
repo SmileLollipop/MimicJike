@@ -1,0 +1,768 @@
+/* **************** BLOCK STRUCTURES ***************** */
+$wrapperWidth: 1000px;
+$topNavHeight: 42px;
+$borderColor: #e8e8e8;
+$lessonWidth: 210px;
+$LessonHeight: 372px;
+$lessonCenterWidth: 550px;
+
+/* *** 初始化***** */
+
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  width: 100%;
+  height: auto;
+  min-height: 4000px;
+}
+
+.wrapper {
+  width: $wrapperWidth;
+  height: auto;
+  margin: 0 auto;
+}
+
+//去除父级浮动样式
+.clearfix:after {
+  content: ' ';
+  width: 0;
+  height: 0;
+  clear: both;
+  overflow: hidden
+}
+
+/* *****end***** */
+
+/* ****图片切换****** */
+
+@mixin SwipperBox($width,$height) {
+  width: $width;
+  height: $height;
+  overflow: hidden;
+  position: relative;
+}
+
+@mixin SwipperList($width,$num) {
+  position: relative;
+  left: 0;
+  width: $width  * $num;
+  height: 100%;
+}
+
+@mixin SwipperItem($width,$height) {
+  float: left;
+  width: $width;
+  height: $height;
+}
+
+@mixin SwipperBtn($height) {
+  display: none;
+  width: 100%;
+  height: $height;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  margin-top: -($height/2);
+  overflow: hidden;
+}
+
+@mixin SwipperBtn-prev($width,$imgSrc,$imgPos_1,$imgPos_2) {
+  display: block;
+  width: $width;
+  height: 100%;
+  float: left;
+  background: url($imgSrc) $imgPos_1 no-repeat;
+  &:hover {
+    background-position: $imgPos_2;
+  }
+
+}
+
+@mixin SwipperBtn-next($width,$imgSrc,$imgPos_1,$imgPos_2) {
+  display: block;
+  width: $width;
+  height: 100%;
+  float: right;
+  background: url($imgSrc) $imgPos_1 no-repeat;
+  &:hover {
+    background-position: $imgPos_2;
+  }
+
+}
+
+/* ****end****** */
+
+.header {
+  height: 74px;
+  overflow: hidden;
+  .hd-wrap {
+    width: 100%;
+    height: 44px;
+    margin: 15px 0;
+    .hd-left {
+      float: left;
+      width: $wrapperWidth * 0.3;
+    }
+    .hd-right {
+      float: right;
+      width: $wrapperWidth * 0.2;
+      margin: 5px 0;
+    }
+    .hd-middle {
+      overflow: hidden;
+    }
+  }
+}
+
+.loading {
+  width: 100%;
+  height: 2px;
+}
+
+.topNav {
+  width: 100%;
+  height: $topNavHeight;
+  .tn-wrap {
+    height: 100%;
+    .topNav-box {
+      width: 538px;
+      height: 100%;
+      float: left;
+      position: relative;
+      &:hover .tn-sub {
+        display: block;
+      }
+      .tn-first {
+        width: auto;
+        display: block;
+        height: 100%;
+        float: left;
+        margin-right: 60px;
+        padding: 10px 0;
+      }
+      .tn-sub {
+        display: none;
+        width: 600px;
+        height: 174px;
+        position: absolute;
+        top: $topNavHeight;
+        left: 0;
+        border: 1px solid $borderColor;
+        border-top: none;
+        z-index: 100;
+        padding: 0 50px;
+        .tn-sub-ul {
+          float: left;
+          width: 120px;
+          height: auto;
+          line-height: 25px;
+          padding: 10px 15px;
+          border-left: 1px solid lighten($borderColor, 5%);
+        }
+
+      }
+    }
+    .tn-userNeed {
+      width: 320px;
+      height: 100%;
+      padding: 10px 0;
+      float: right;
+      a {
+        margin-right: 15px;
+      }
+    }
+  }
+}
+
+.total-lesson {
+  width: 100%;
+  height: $LessonHeight;
+  margin: 20px 0;
+  .lesson-center-focus {
+    width: 100%;
+    height: 100%;
+    float: left;
+    .inner {
+      $imgWidth: $lessonCenterWidth;
+      $imgHeight: 260px;
+      width: $imgWidth;
+      height: $imgHeight;
+      margin-left: $lessonWidth + 15;
+      margin-right: $lessonWidth + 15;
+      .lessonCarousel {
+        @include SwipperBox($imgWidth, $imgHeight);
+        &:hover .shiftBtn {
+          display: block;
+        }
+        .imgList {
+          @include SwipperList($imgWidth, 5);
+          li {
+            @include SwipperItem($imgWidth, $imgHeight);
+          }
+          img {
+            width: $imgWidth;
+            height: $imgHeight;
+          }
+        }
+        .lineList {
+          position: absolute;
+          width: 256px;
+          height: 8px;
+          bottom: 15px;
+          left: 50%;
+          margin-left: -128px;
+          li {
+            float: left;
+            width: 36px;
+            height: 100%;
+            margin-right: 15px;
+          }
+        }
+        .shiftBtn {
+          @include SwipperBtn(50px);
+          .prev {
+            @include SwipperBtn-prev(40px, "../images/banner-left.png", -10px -5px, -10px -65px);
+          }
+          .next {
+            @include SwipperBtn-next(40px, "../images/banner-right.png", -10px -5px, -10px -65px);
+          }
+        }
+      }
+      .lessonSwiper {
+        margin-top: 12px;
+        @include SwipperBox(100%, 100px);
+        &:hover .shiftBtn {
+          display: block;
+        }
+        .imgList {
+          $width: ($lessonCenterWidth / 3);
+          @include SwipperList($width, 6);
+          li {
+            border: 1px solid $borderColor;
+            border-right: none;
+            &:last-child {
+              border-right: 1px solid $borderColor;
+            }
+            @include SwipperItem($width, 100px);
+            text-align: center;
+            padding: 10px;
+            img {
+              width: 40px;
+              height: 40px;
+            }
+          }
+
+        }
+        .shiftBtn {
+          @include SwipperBtn(40px);
+          .prev {
+            @include SwipperBtn-prev(24px, "../images/focus.png", 0 0, 0 -40px);
+            background-size: 48px 80px;
+          }
+          .next {
+            @include SwipperBtn-next(24px, "../images/focus.png", -24px 0, -24px -40px);
+            background-size: 48px 80px;
+          }
+        }
+      }
+    }
+  }
+  .lesson-classfiy-nav {
+    width: $lessonWidth;
+    height: 100%;
+    float: left;
+    margin-left: -100%;
+    position: relative;
+    .classfiy-nav-first {
+      width: 100%;
+      height: ($LessonHeight - 2)/10;
+      line-height: ($LessonHeight - 2)/10;
+      a.first-nav {
+        padding-left: 15px;
+        display: block;
+        width: 100%;
+        height: 100%;
+      }
+      .classfiy-nav-sub {
+        width: auto;
+        min-width: 402px;
+        height: auto;
+        min-height: $LessonHeight;
+        position: absolute;
+        left: $lessonWidth;
+        top: -2px;
+        padding: 0 10px;
+
+      }
+    }
+  }
+  .lesson-right-show {
+    width: $lessonWidth;
+    height: 100%;
+    float: left;
+    margin-left: -210px;
+    .news {
+      padding: 10px;
+      height: 130px;
+    }
+    .user-login {
+      height: 86px;
+      padding: 10px;
+      .avator {
+        width: 40px;
+        height: 40px;
+        float: left;
+        margin-right: 10px;
+      }
+      .login {
+        float: left;
+      }
+    }
+    .mini-recommand {
+      .recommand-item {
+        height: ($LessonHeight - 216)/2;
+        width: ($lessonWidth - 2)/4;
+        float: left;
+        padding: 10px;
+      }
+    }
+  }
+}
+
+.recommad-lesson {
+  .re-tab-title {
+    width: 100%;
+    height: 40px;
+
+    li {
+      float: left;
+      width: $wrapperWidth/6;
+      height: 40px;
+      text-align: center;
+      line-height: 40px;
+      border-bottom: 2px solid $borderColor;
+      letter-spacing: 1px;
+      position: relative;
+    }
+
+  }
+  .re-tab-box {
+    width: 100%;
+    height: 480px;
+    .lesson-ul {
+      display: none;
+    }
+    .tab-box_active {
+      width: 100%;
+      height: 100%;
+      display: block;
+      .re-li {
+        width: 235px;
+        height: 220px;
+        float: left;
+        margin-right: 20px;
+        margin-top: 20px;
+        &:nth-child(4n+4) {
+          margin-right: 0;
+        }
+        &:hover .lessonShowBox .lesson-play {
+          display: block;
+        }
+        .lessonShowBox {
+          width: 100%;
+          height: 128px;
+          position: relative;
+          z-index: -200;
+          img {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            left: 0;
+            right: 0;
+          }
+          .free-icon {
+            height: 22px;
+            width: 38px;
+            display: inline-block;
+            position: absolute;
+            top: -2px;
+            right: 8px;
+            background: url(../images/icon.png) -58px -43px no-repeat;
+            z-index: 100;
+          }
+          .lesson-play {
+            display: none;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            left: 0;
+            right: 0;
+            background: rgba(0, 0, 0, .4);
+            .player-icon {
+              width: 50px;
+              height: 50px;
+              position: absolute;
+              left: 50%;
+              top: 50%;
+              margin-top: -25px;
+              margin-left: -25px;
+              cursor: pointer;
+            }
+            .collect-icon {
+              display: block;
+              width: 16px;
+              height: 16px;
+              position: absolute;
+              top: 10px;
+              left: 10px;
+              background: url(../images/collect-icon.png);
+              background-size: 16px 16px;
+              cursor: pointer;
+              &:hover {
+                background: url(../images/collect-icon-2.png);
+                background-size: 16px 16px;
+              }
+            }
+
+          }
+        }
+        p.lesson-title {
+          width: 100%;
+          height: 52px;
+        }
+        p.lesson-text {
+          width: 100%;
+          height: 0;
+        }
+        .others {
+          height: 40px;
+          padding: 10px;
+        }
+      }
+    }
+
+  }
+}
+
+//模块公用标题类
+.publicTitle {
+  padding: 15px 0;
+  margin-top: 15px;
+  .pt_left {
+    float: left;
+    strong {
+      letter-spacing: 1px;
+      font-size: 18px;
+      font-weight: 500;
+    }
+    .way {
+      display: inline-block;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: darken($borderColor, 20%);
+      color: #fff;
+      text-align: center;
+      line-height: 14px;
+      font-style: normal;
+      margin-left: 5px;
+      cursor: pointer;
+    }
+    .tip {
+      display: none;
+      border: 1px solid $borderColor;
+      font-size: 12px;
+      padding: 5px;
+      position: relative;
+      margin-left: 5px;
+      box-shadow: rgba(0, 0, 0, .1) 0 1px 2px;
+      .tip-arrow {
+        display: inline-block;
+        position: absolute;
+        border: 4px solid transparent;
+        border-right-color: #fff;
+        left: -8px;
+        top: 50%;
+        margin-top: -4px;
+      }
+      .tip-arrow-border {
+        @extend .tip-arrow;
+        left: -9px;
+        border-right-color: $borderColor;
+        z-index: -3;
+      }
+
+    }
+  }
+  .pt_right {
+    float: right;
+    font-size: 12px;
+    a {
+      color: #2D85CA;
+    }
+
+  }
+}
+
+.projectPath {
+  .pj-box {
+    height: 600px;
+    .pj-card {
+      display: block;
+      width: $wrapperWidth/5;
+      height: 300px;
+      float: left;
+      border: 1px solid $borderColor;
+      border-right: none;
+      &:nth-child(5n+5) {
+        border-right: 1px solid $borderColor;
+      }
+      &:nth-child(n+6) {
+        border-top: none;
+      }
+
+    }
+
+  }
+}
+
+.knowledgeSystem {
+  .ks-box {
+    height: 480px;
+    .ks-item {
+      width: $wrapperWidth/6;
+      height: 120px;
+      border: 1px solid $borderColor;
+      border-right: none;
+      border-bottom: none;
+      float: left;
+      &:nth-child(6n+6) {
+        border-right: 1px solid $borderColor;
+      }
+      &:nth-child(n+19) {
+        border-bottom: 1px solid $borderColor;
+      }
+    }
+  }
+}
+
+.excellent-lesson {
+  .ex-box {
+    height: 261px;
+    .ex-card {
+      width: 235px;
+      height: 100%;
+      padding: 16px;
+      margin-right: 20px;
+      float: left;
+      position: relative;
+      &:last-child {
+        margin-right: 0;
+      }
+      border: 1px solid $borderColor;
+    }
+  }
+}
+
+.wiki {
+  .wiki-box {
+    width: 100%;
+    height: 370px;
+    .wiki-card {
+      width: $wrapperWidth/3;
+      height: 100%;
+      border: 1px solid $borderColor;
+      border-right: none;
+      padding: 10px 18px;
+      &:last-child {
+        border-right: 1px solid $borderColor;
+      }
+      float: left;
+      dl {
+        dd {
+          float: left;
+          text-align: center;
+          &:first-child {
+            margin-right: 15px;
+          }
+        }
+      }
+      ul {
+        li {
+          a {
+            display: block;
+            p {
+              float: left;
+            }
+            span {
+              float: right;
+            }
+          }
+        }
+      }
+    }
+
+  }
+}
+
+.enterprise {
+  .enterprise-box {
+    @include SwipperBox(100%, 90px);
+    border: 1px solid $borderColor;
+    padding: 20px;
+    &:hover .shiftBtn {
+      display: block;
+    }
+    .imgList-wrap {
+      width: 960px;
+      height: 50px;
+      overflow: hidden;
+      .imgList {
+        @include SwipperList(160px, 12);
+        li {
+          border: 1px solid $borderColor;
+          margin-right: 10px;
+          @include SwipperItem(150px, 48px);
+          img {
+            width: 100%;
+            height: 100%;
+          }
+        }
+      }
+
+    }
+
+    .shiftBtn {
+      @include SwipperBtn(50px);
+      .prev {
+        @include SwipperBtn-prev(40px, "../images/banner-left.png", -10px -5px, -10px -65px);
+      }
+      .next {
+        @include SwipperBtn-next(40px, "../images/banner-right.png", -10px -5px, -10px -65px);
+      }
+    }
+
+  }
+}
+
+.college {
+  .college-box {
+    @include SwipperBox(100%, 150px);
+    border: 1px solid $borderColor;
+    padding: 20px;
+    &:hover .shiftBtn {
+      display: block;
+    }
+    .imgList-wrap {
+      width: 962px;
+      height: 110px;
+      overflow: hidden;
+      .imgList {
+        @include SwipperList(140px, 14);
+        li {
+          margin-right: 30px;
+          @include SwipperItem(110px, 110px);
+          img {
+            width: 100%;
+            height: 100%;
+          }
+        }
+      }
+
+    }
+    .shiftBtn {
+      @include SwipperBtn(50px);
+      .prev {
+        @include SwipperBtn-prev(40px, "../images/banner-left.png", -10px -5px, -10px -65px);
+      }
+      .next {
+        @include SwipperBtn-next(40px, "../images/banner-right.png", -10px -5px, -10px -65px);
+      }
+    }
+  }
+}
+
+.media {
+  .media-box {
+    @include SwipperBox(100%, 90px);
+    border: 1px solid $borderColor;
+    padding: 20px;
+    &:hover .shiftBtn {
+      display: block;
+    }
+    .imgList-wrap {
+      width: 960px;
+      height: 50px;
+      overflow: hidden;
+      .imgList {
+        @include SwipperList(160px, 12);
+        li {
+          border: 1px solid $borderColor;
+          margin-right: 10px;
+          @include SwipperItem(150px, 48px);
+          img {
+            width: 100%;
+            height: 100%;
+          }
+        }
+      }
+
+    }
+
+    .shiftBtn {
+      @include SwipperBtn(50px);
+      .prev {
+        @include SwipperBtn-prev(40px, "../images/banner-left.png", -10px -5px, -10px -65px);
+      }
+      .next {
+        @include SwipperBtn-next(40px, "../images/banner-right.png", -10px -5px, -10px -65px);
+      }
+    }
+
+  }
+}
+
+.footer {
+  margin-top: 50px;
+  height: 310px;
+  .jkinfor-block {
+    width: 100%;
+    height: 260px;
+    background: #fafafa;
+    border-top: 1px solid #E4E4E4;
+    border-bottom: 1px solid #e4e4e4;
+    padding: 20px;
+    dl {
+      width: 120px;
+      height: 220px;
+      float: left;
+      border-left: 1px solid #E4E4E4;
+      margin-right: 71px;
+      padding-left: 28px;
+    }
+    .search-share {
+      float: left;
+      width: 230px;
+      padding: 20px 0 0 30px;
+      position: relative;
+      top: -20px;
+      margin-left: 15px;
+      margin-right: -10px;
+    }
+
+  }
+
+}
+
+
+
+
+
+
+
+
+
+
+

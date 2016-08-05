@@ -1,0 +1,653 @@
+@charset "UTF-8";
+/* **************** BLOCK STRUCTURES ***************** */
+/* *** 初始化***** */
+* {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box; }
+
+.container {
+  width: 100%;
+  height: auto;
+  min-height: 4000px; }
+
+.wrapper {
+  width: 1000px;
+  height: auto;
+  margin: 0 auto; }
+
+.clearfix:after {
+  content: ' ';
+  width: 0;
+  height: 0;
+  clear: both;
+  overflow: hidden; }
+
+/* *****end***** */
+/* ****图片切换****** */
+/* ****end****** */
+.header {
+  height: 74px;
+  overflow: hidden; }
+  .header .hd-wrap {
+    width: 100%;
+    height: 44px;
+    margin: 15px 0; }
+    .header .hd-wrap .hd-left {
+      float: left;
+      width: 300px; }
+    .header .hd-wrap .hd-right {
+      float: right;
+      width: 200px;
+      margin: 5px 0; }
+    .header .hd-wrap .hd-middle {
+      overflow: hidden; }
+
+.loading {
+  width: 100%;
+  height: 2px; }
+
+.topNav {
+  width: 100%;
+  height: 42px; }
+  .topNav .tn-wrap {
+    height: 100%; }
+    .topNav .tn-wrap .topNav-box {
+      width: 538px;
+      height: 100%;
+      float: left;
+      position: relative; }
+      .topNav .tn-wrap .topNav-box:hover .tn-sub {
+        display: block; }
+      .topNav .tn-wrap .topNav-box .tn-first {
+        width: auto;
+        display: block;
+        height: 100%;
+        float: left;
+        margin-right: 60px;
+        padding: 10px 0; }
+      .topNav .tn-wrap .topNav-box .tn-sub {
+        display: none;
+        width: 600px;
+        height: 174px;
+        position: absolute;
+        top: 42px;
+        left: 0;
+        border: 1px solid #e8e8e8;
+        border-top: none;
+        z-index: 100;
+        padding: 0 50px; }
+        .topNav .tn-wrap .topNav-box .tn-sub .tn-sub-ul {
+          float: left;
+          width: 120px;
+          height: auto;
+          line-height: 25px;
+          padding: 10px 15px;
+          border-left: 1px solid whitesmoke; }
+    .topNav .tn-wrap .tn-userNeed {
+      width: 320px;
+      height: 100%;
+      padding: 10px 0;
+      float: right; }
+      .topNav .tn-wrap .tn-userNeed a {
+        margin-right: 15px; }
+
+.total-lesson {
+  width: 100%;
+  height: 372px;
+  margin: 20px 0; }
+  .total-lesson .lesson-center-focus {
+    width: 100%;
+    height: 100%;
+    float: left; }
+    .total-lesson .lesson-center-focus .inner {
+      width: 550px;
+      height: 260px;
+      margin-left: 225px;
+      margin-right: 225px; }
+      .total-lesson .lesson-center-focus .inner .lessonCarousel {
+        width: 550px;
+        height: 260px;
+        overflow: hidden;
+        position: relative; }
+        .total-lesson .lesson-center-focus .inner .lessonCarousel:hover .shiftBtn {
+          display: block; }
+        .total-lesson .lesson-center-focus .inner .lessonCarousel .imgList {
+          position: relative;
+          left: 0;
+          width: 2750px;
+          height: 100%; }
+          .total-lesson .lesson-center-focus .inner .lessonCarousel .imgList li {
+            float: left;
+            width: 550px;
+            height: 260px; }
+          .total-lesson .lesson-center-focus .inner .lessonCarousel .imgList img {
+            width: 550px;
+            height: 260px; }
+        .total-lesson .lesson-center-focus .inner .lessonCarousel .lineList {
+          position: absolute;
+          width: 256px;
+          height: 8px;
+          bottom: 15px;
+          left: 50%;
+          margin-left: -128px; }
+          .total-lesson .lesson-center-focus .inner .lessonCarousel .lineList li {
+            float: left;
+            width: 36px;
+            height: 100%;
+            margin-right: 15px; }
+        .total-lesson .lesson-center-focus .inner .lessonCarousel .shiftBtn {
+          display: none;
+          width: 100%;
+          height: 50px;
+          position: absolute;
+          top: 50%;
+          left: 0;
+          margin-top: -25px;
+          overflow: hidden; }
+          .total-lesson .lesson-center-focus .inner .lessonCarousel .shiftBtn .prev {
+            display: block;
+            width: 40px;
+            height: 100%;
+            float: left;
+            background: url("../images/banner-left.png") -10px -5px no-repeat; }
+            .total-lesson .lesson-center-focus .inner .lessonCarousel .shiftBtn .prev:hover {
+              background-position: -10px -65px; }
+          .total-lesson .lesson-center-focus .inner .lessonCarousel .shiftBtn .next {
+            display: block;
+            width: 40px;
+            height: 100%;
+            float: right;
+            background: url("../images/banner-right.png") -10px -5px no-repeat; }
+            .total-lesson .lesson-center-focus .inner .lessonCarousel .shiftBtn .next:hover {
+              background-position: -10px -65px; }
+      .total-lesson .lesson-center-focus .inner .lessonSwiper {
+        margin-top: 12px;
+        width: 100%;
+        height: 100px;
+        overflow: hidden;
+        position: relative; }
+        .total-lesson .lesson-center-focus .inner .lessonSwiper:hover .shiftBtn {
+          display: block; }
+        .total-lesson .lesson-center-focus .inner .lessonSwiper .imgList {
+          position: relative;
+          left: 0;
+          width: 1100px;
+          height: 100%; }
+          .total-lesson .lesson-center-focus .inner .lessonSwiper .imgList li {
+            border: 1px solid #e8e8e8;
+            border-right: none;
+            float: left;
+            width: 183.33333px;
+            height: 100px;
+            text-align: center;
+            padding: 10px; }
+            .total-lesson .lesson-center-focus .inner .lessonSwiper .imgList li:last-child {
+              border-right: 1px solid #e8e8e8; }
+            .total-lesson .lesson-center-focus .inner .lessonSwiper .imgList li img {
+              width: 40px;
+              height: 40px; }
+        .total-lesson .lesson-center-focus .inner .lessonSwiper .shiftBtn {
+          display: none;
+          width: 100%;
+          height: 40px;
+          position: absolute;
+          top: 50%;
+          left: 0;
+          margin-top: -20px;
+          overflow: hidden; }
+          .total-lesson .lesson-center-focus .inner .lessonSwiper .shiftBtn .prev {
+            display: block;
+            width: 24px;
+            height: 100%;
+            float: left;
+            background: url("../images/focus.png") 0 0 no-repeat;
+            background-size: 48px 80px; }
+            .total-lesson .lesson-center-focus .inner .lessonSwiper .shiftBtn .prev:hover {
+              background-position: 0 -40px; }
+          .total-lesson .lesson-center-focus .inner .lessonSwiper .shiftBtn .next {
+            display: block;
+            width: 24px;
+            height: 100%;
+            float: right;
+            background: url("../images/focus.png") -24px 0 no-repeat;
+            background-size: 48px 80px; }
+            .total-lesson .lesson-center-focus .inner .lessonSwiper .shiftBtn .next:hover {
+              background-position: -24px -40px; }
+  .total-lesson .lesson-classfiy-nav {
+    width: 210px;
+    height: 100%;
+    float: left;
+    margin-left: -100%;
+    position: relative; }
+    .total-lesson .lesson-classfiy-nav .classfiy-nav-first {
+      width: 100%;
+      height: 37px;
+      line-height: 37px; }
+      .total-lesson .lesson-classfiy-nav .classfiy-nav-first a.first-nav {
+        padding-left: 15px;
+        display: block;
+        width: 100%;
+        height: 100%; }
+      .total-lesson .lesson-classfiy-nav .classfiy-nav-first .classfiy-nav-sub {
+        width: auto;
+        min-width: 402px;
+        height: auto;
+        min-height: 372px;
+        position: absolute;
+        left: 210px;
+        top: -2px;
+        padding: 0 10px; }
+  .total-lesson .lesson-right-show {
+    width: 210px;
+    height: 100%;
+    float: left;
+    margin-left: -210px; }
+    .total-lesson .lesson-right-show .news {
+      padding: 10px;
+      height: 130px; }
+    .total-lesson .lesson-right-show .user-login {
+      height: 86px;
+      padding: 10px; }
+      .total-lesson .lesson-right-show .user-login .avator {
+        width: 40px;
+        height: 40px;
+        float: left;
+        margin-right: 10px; }
+      .total-lesson .lesson-right-show .user-login .login {
+        float: left; }
+    .total-lesson .lesson-right-show .mini-recommand .recommand-item {
+      height: 78px;
+      width: 52px;
+      float: left;
+      padding: 10px; }
+
+.recommad-lesson .re-tab-title {
+  width: 100%;
+  height: 40px; }
+  .recommad-lesson .re-tab-title li {
+    float: left;
+    width: 166.66667px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    border-bottom: 2px solid #e8e8e8;
+    letter-spacing: 1px;
+    position: relative; }
+
+.recommad-lesson .re-tab-box {
+  width: 100%;
+  height: 480px; }
+  .recommad-lesson .re-tab-box .lesson-ul {
+    display: none; }
+  .recommad-lesson .re-tab-box .tab-box_active {
+    width: 100%;
+    height: 100%;
+    display: block; }
+    .recommad-lesson .re-tab-box .tab-box_active .re-li {
+      width: 235px;
+      height: 220px;
+      float: left;
+      margin-right: 20px;
+      margin-top: 20px; }
+      .recommad-lesson .re-tab-box .tab-box_active .re-li:nth-child(4n+4) {
+        margin-right: 0; }
+      .recommad-lesson .re-tab-box .tab-box_active .re-li:hover .lessonShowBox .lesson-play {
+        display: block; }
+      .recommad-lesson .re-tab-box .tab-box_active .re-li .lessonShowBox {
+        width: 100%;
+        height: 128px;
+        position: relative;
+        z-index: -200; }
+        .recommad-lesson .re-tab-box .tab-box_active .re-li .lessonShowBox img {
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          left: 0;
+          right: 0; }
+        .recommad-lesson .re-tab-box .tab-box_active .re-li .lessonShowBox .free-icon {
+          height: 22px;
+          width: 38px;
+          display: inline-block;
+          position: absolute;
+          top: -2px;
+          right: 8px;
+          background: url(../images/icon.png) -58px -43px no-repeat;
+          z-index: 100; }
+        .recommad-lesson .re-tab-box .tab-box_active .re-li .lessonShowBox .lesson-play {
+          display: none;
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          left: 0;
+          right: 0;
+          background: rgba(0, 0, 0, 0.4); }
+          .recommad-lesson .re-tab-box .tab-box_active .re-li .lessonShowBox .lesson-play .player-icon {
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            margin-top: -25px;
+            margin-left: -25px;
+            cursor: pointer; }
+          .recommad-lesson .re-tab-box .tab-box_active .re-li .lessonShowBox .lesson-play .collect-icon {
+            display: block;
+            width: 16px;
+            height: 16px;
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: url(../images/collect-icon.png);
+            background-size: 16px 16px;
+            cursor: pointer; }
+            .recommad-lesson .re-tab-box .tab-box_active .re-li .lessonShowBox .lesson-play .collect-icon:hover {
+              background: url(../images/collect-icon-2.png);
+              background-size: 16px 16px; }
+      .recommad-lesson .re-tab-box .tab-box_active .re-li p.lesson-title {
+        width: 100%;
+        height: 52px; }
+      .recommad-lesson .re-tab-box .tab-box_active .re-li p.lesson-text {
+        width: 100%;
+        height: 0; }
+      .recommad-lesson .re-tab-box .tab-box_active .re-li .others {
+        height: 40px;
+        padding: 10px; }
+
+.publicTitle {
+  padding: 15px 0;
+  margin-top: 15px; }
+  .publicTitle .pt_left {
+    float: left; }
+    .publicTitle .pt_left strong {
+      letter-spacing: 1px;
+      font-size: 18px;
+      font-weight: 500; }
+    .publicTitle .pt_left .way {
+      display: inline-block;
+      width: 14px;
+      height: 14px;
+      -webkit-border-radius: 50%;
+              border-radius: 50%;
+      background: #b5b5b5;
+      color: #fff;
+      text-align: center;
+      line-height: 14px;
+      font-style: normal;
+      margin-left: 5px;
+      cursor: pointer; }
+    .publicTitle .pt_left .tip {
+      display: none;
+      border: 1px solid #e8e8e8;
+      font-size: 12px;
+      padding: 5px;
+      position: relative;
+      margin-left: 5px;
+      -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0 1px 2px;
+              box-shadow: rgba(0, 0, 0, 0.1) 0 1px 2px; }
+      .publicTitle .pt_left .tip .tip-arrow, .publicTitle .pt_left .tip .tip-arrow-border {
+        display: inline-block;
+        position: absolute;
+        border: 4px solid transparent;
+        border-right-color: #fff;
+        left: -8px;
+        top: 50%;
+        margin-top: -4px; }
+      .publicTitle .pt_left .tip .tip-arrow-border {
+        left: -9px;
+        border-right-color: #e8e8e8;
+        z-index: -3; }
+  .publicTitle .pt_right {
+    float: right;
+    font-size: 12px; }
+    .publicTitle .pt_right a {
+      color: #2D85CA; }
+
+.projectPath .pj-box {
+  height: 600px; }
+  .projectPath .pj-box .pj-card {
+    display: block;
+    width: 200px;
+    height: 300px;
+    float: left;
+    border: 1px solid #e8e8e8;
+    border-right: none; }
+    .projectPath .pj-box .pj-card:nth-child(5n+5) {
+      border-right: 1px solid #e8e8e8; }
+    .projectPath .pj-box .pj-card:nth-child(n+6) {
+      border-top: none; }
+
+.knowledgeSystem .ks-box {
+  height: 480px; }
+  .knowledgeSystem .ks-box .ks-item {
+    width: 166.66667px;
+    height: 120px;
+    border: 1px solid #e8e8e8;
+    border-right: none;
+    border-bottom: none;
+    float: left; }
+    .knowledgeSystem .ks-box .ks-item:nth-child(6n+6) {
+      border-right: 1px solid #e8e8e8; }
+    .knowledgeSystem .ks-box .ks-item:nth-child(n+19) {
+      border-bottom: 1px solid #e8e8e8; }
+
+.excellent-lesson .ex-box {
+  height: 261px; }
+  .excellent-lesson .ex-box .ex-card {
+    width: 235px;
+    height: 100%;
+    padding: 16px;
+    margin-right: 20px;
+    float: left;
+    position: relative;
+    border: 1px solid #e8e8e8; }
+    .excellent-lesson .ex-box .ex-card:last-child {
+      margin-right: 0; }
+
+.wiki .wiki-box {
+  width: 100%;
+  height: 370px; }
+  .wiki .wiki-box .wiki-card {
+    width: 333.33333px;
+    height: 100%;
+    border: 1px solid #e8e8e8;
+    border-right: none;
+    padding: 10px 18px;
+    float: left; }
+    .wiki .wiki-box .wiki-card:last-child {
+      border-right: 1px solid #e8e8e8; }
+    .wiki .wiki-box .wiki-card dl dd {
+      float: left;
+      text-align: center; }
+      .wiki .wiki-box .wiki-card dl dd:first-child {
+        margin-right: 15px; }
+    .wiki .wiki-box .wiki-card ul li a {
+      display: block; }
+      .wiki .wiki-box .wiki-card ul li a p {
+        float: left; }
+      .wiki .wiki-box .wiki-card ul li a span {
+        float: right; }
+
+.enterprise .enterprise-box {
+  width: 100%;
+  height: 90px;
+  overflow: hidden;
+  position: relative;
+  border: 1px solid #e8e8e8;
+  padding: 20px; }
+  .enterprise .enterprise-box:hover .shiftBtn {
+    display: block; }
+  .enterprise .enterprise-box .imgList-wrap {
+    width: 960px;
+    height: 50px;
+    overflow: hidden; }
+    .enterprise .enterprise-box .imgList-wrap .imgList {
+      position: relative;
+      left: 0;
+      width: 1920px;
+      height: 100%; }
+      .enterprise .enterprise-box .imgList-wrap .imgList li {
+        border: 1px solid #e8e8e8;
+        margin-right: 10px;
+        float: left;
+        width: 150px;
+        height: 48px; }
+        .enterprise .enterprise-box .imgList-wrap .imgList li img {
+          width: 100%;
+          height: 100%; }
+  .enterprise .enterprise-box .shiftBtn {
+    display: none;
+    width: 100%;
+    height: 50px;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    margin-top: -25px;
+    overflow: hidden; }
+    .enterprise .enterprise-box .shiftBtn .prev {
+      display: block;
+      width: 40px;
+      height: 100%;
+      float: left;
+      background: url("../images/banner-left.png") -10px -5px no-repeat; }
+      .enterprise .enterprise-box .shiftBtn .prev:hover {
+        background-position: -10px -65px; }
+    .enterprise .enterprise-box .shiftBtn .next {
+      display: block;
+      width: 40px;
+      height: 100%;
+      float: right;
+      background: url("../images/banner-right.png") -10px -5px no-repeat; }
+      .enterprise .enterprise-box .shiftBtn .next:hover {
+        background-position: -10px -65px; }
+
+.college .college-box {
+  width: 100%;
+  height: 150px;
+  overflow: hidden;
+  position: relative;
+  border: 1px solid #e8e8e8;
+  padding: 20px; }
+  .college .college-box:hover .shiftBtn {
+    display: block; }
+  .college .college-box .imgList-wrap {
+    width: 962px;
+    height: 110px;
+    overflow: hidden; }
+    .college .college-box .imgList-wrap .imgList {
+      position: relative;
+      left: 0;
+      width: 1960px;
+      height: 100%; }
+      .college .college-box .imgList-wrap .imgList li {
+        margin-right: 30px;
+        float: left;
+        width: 110px;
+        height: 110px; }
+        .college .college-box .imgList-wrap .imgList li img {
+          width: 100%;
+          height: 100%; }
+  .college .college-box .shiftBtn {
+    display: none;
+    width: 100%;
+    height: 50px;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    margin-top: -25px;
+    overflow: hidden; }
+    .college .college-box .shiftBtn .prev {
+      display: block;
+      width: 40px;
+      height: 100%;
+      float: left;
+      background: url("../images/banner-left.png") -10px -5px no-repeat; }
+      .college .college-box .shiftBtn .prev:hover {
+        background-position: -10px -65px; }
+    .college .college-box .shiftBtn .next {
+      display: block;
+      width: 40px;
+      height: 100%;
+      float: right;
+      background: url("../images/banner-right.png") -10px -5px no-repeat; }
+      .college .college-box .shiftBtn .next:hover {
+        background-position: -10px -65px; }
+
+.media .media-box {
+  width: 100%;
+  height: 90px;
+  overflow: hidden;
+  position: relative;
+  border: 1px solid #e8e8e8;
+  padding: 20px; }
+  .media .media-box:hover .shiftBtn {
+    display: block; }
+  .media .media-box .imgList-wrap {
+    width: 960px;
+    height: 50px;
+    overflow: hidden; }
+    .media .media-box .imgList-wrap .imgList {
+      position: relative;
+      left: 0;
+      width: 1920px;
+      height: 100%; }
+      .media .media-box .imgList-wrap .imgList li {
+        border: 1px solid #e8e8e8;
+        margin-right: 10px;
+        float: left;
+        width: 150px;
+        height: 48px; }
+        .media .media-box .imgList-wrap .imgList li img {
+          width: 100%;
+          height: 100%; }
+  .media .media-box .shiftBtn {
+    display: none;
+    width: 100%;
+    height: 50px;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    margin-top: -25px;
+    overflow: hidden; }
+    .media .media-box .shiftBtn .prev {
+      display: block;
+      width: 40px;
+      height: 100%;
+      float: left;
+      background: url("../images/banner-left.png") -10px -5px no-repeat; }
+      .media .media-box .shiftBtn .prev:hover {
+        background-position: -10px -65px; }
+    .media .media-box .shiftBtn .next {
+      display: block;
+      width: 40px;
+      height: 100%;
+      float: right;
+      background: url("../images/banner-right.png") -10px -5px no-repeat; }
+      .media .media-box .shiftBtn .next:hover {
+        background-position: -10px -65px; }
+
+.footer {
+  margin-top: 50px;
+  height: 310px; }
+  .footer .jkinfor-block {
+    width: 100%;
+    height: 260px;
+    background: #fafafa;
+    border-top: 1px solid #E4E4E4;
+    border-bottom: 1px solid #e4e4e4;
+    padding: 20px; }
+    .footer .jkinfor-block dl {
+      width: 120px;
+      height: 220px;
+      float: left;
+      border-left: 1px solid #E4E4E4;
+      margin-right: 71px;
+      padding-left: 28px; }
+    .footer .jkinfor-block .search-share {
+      float: left;
+      width: 230px;
+      padding: 20px 0 0 30px;
+      position: relative;
+      top: -20px;
+      margin-left: 15px;
+      margin-right: -10px; }

@@ -1,0 +1,899 @@
+/* **************** BLOCK SKINS ***************** */
+$baseColor: #35b558;
+$border: 1px solid #e8e8e8;
+$lightBorder: 1px solid lighten(#e8e8e8, 5%);
+$subFontSize: 12px;
+
+/* *** 公共类 ***** */
+* {
+  font-weight: 400;
+  color: #666;
+}
+
+.red-font {
+  color: red;
+}
+
+@mixin a-hover($color:$baseColor) {
+  color: darken($color, 5%);
+  font-weight: 500;
+  cursor: pointer;
+}
+
+@mixin navBox {
+  box-shadow: rgba(0, 0, 0, .1) 0 1px 5px;
+  background: rgba(255, 255, 255, .97);
+}
+
+@mixin fontStyle($lineHeight:1.5) {
+  font-size: $subFontSize;
+  line-height: $lineHeight;
+  color: lighten(#666, 5%);
+  text-align: center;
+  cursor: pointer;
+}
+
+@mixin h2-font {
+  font-size: 16px;
+  font-weight: 500;
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+@mixin buttonStyle($background:$baseColor,$textColor:#fff) {
+  font-weight: 500;
+  display: inline-block;
+  text-align: center;
+  background: $background;
+  color: $textColor;
+  cursor: pointer;
+}
+
+@mixin buttonStyleTwo($background,$textColor) {
+  font-weight: 500;
+  display: inline-block;
+  width: 140px;
+  height: 34px;
+  line-height: 34px;
+  font-size: 16px;
+  text-align: center;
+  background: $background;
+  color: $textColor;
+  cursor: pointer;
+  outline: 0;
+  border-radius: 2px;
+}
+
+//JS样式
+
+.tabClass {
+  background-color: #F7F7F7;
+}
+
+/* ****end**** */
+
+.header {
+  .jike-logo {
+    width: 113px;
+  }
+  .icon-message {
+    display: inline-block;
+    width: 15px;
+    height: 13px;
+    background: url(../images/message.gif) left center no-repeat;
+    background-size: 15px 13px;
+    vertical-align: middle;
+  }
+  .hd-search-form {
+    width: 378px;
+    height: 36px;
+    margin: 4px 0;
+    .hd-search-input {
+      height: 100%;
+      width: 338px;
+      border: $border;
+      border-right: none;
+      text-indent: 5px;
+      outline: none;
+    }
+    .hd-search-submit {
+      height: 100%;
+      width: 40px;
+      margin-left: -6px;
+      border: $border;
+      background: url(../images/topsearch-icon.png) center center no-repeat;
+      cursor: pointer;
+      outline: none;
+      &:hover {
+        border: 1px solid $baseColor;
+        background: $baseColor url(../images/topsearch-icon2.png) center center no-repeat;
+      }
+    }
+  }
+}
+
+.loading-skin {
+  background: $baseColor linear-gradient(to right, #35b550, #8aca8c, #2d85ca);
+}
+
+.topNav {
+  border-bottom: $border;
+  @include navBox;
+  .topNav-box {
+    a:hover {
+      @include a-hover;
+    }
+    .tn-sub-ul {
+      position: relative;
+      .ul-arrow {
+        display: none;
+        width: 0;
+        height: 0;
+        position: absolute;
+        border: 6px dashed transparent;
+        left: 50%;
+        top: -11px;
+        margin-left: -3px;
+        border-bottom-color: #F7F7F7;
+      }
+      .ul-arrow-outer {
+        display: none;
+        @extend .ul-arrow;
+        border: 6px solid transparent;
+        top: -13px;
+        margin-left: -3px;
+        border-bottom-color: #e8e8e8;
+        z-index: -100;
+      }
+    }
+  }
+
+  .tn-userNeed {
+    a:hover {
+      @include a-hover;
+    }
+    img {
+      vertical-align: middle;
+    }
+    .icon-new {
+      position: relative;
+      width: 15px;
+      top: -10px;
+    }
+  }
+
+  .tn-sub {
+    @include navBox;
+    font-size: $subFontSize;
+  }
+
+}
+
+.total-lesson {
+  cursor: pointer;
+  .lesson-center-focus {
+    .inner {
+      .lessonCarousel {
+        background: $baseColor;
+        .lineList {
+          li {
+            border-top: 2px solid #fff;
+          }
+          .on {
+            border-top: 2px solid #00cc99;
+          }
+        }
+      }
+      .lessonSwiper {
+        .imgList {
+          li {
+            p {
+              @include fontStyle(1.8);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .lesson-classfiy-nav {
+    border-top: 2px solid $baseColor;
+    .classfiy-nav-first {
+      border: $border;
+      border-bottom: $lightBorder;
+      border-top: none;
+      background: #fff url("../images/more-icon.png") no-repeat right 10px center;
+      background-size: 6px 10px;
+      &:last-child {
+        border-bottom: $border;
+      }
+      &:hover {
+        background: #fff;
+        border: $border;
+        border-left: 2px solid $baseColor;
+        border-right: 3px solid #fff;
+        margin-top: -1px;
+        margin-left: -2px;
+      }
+      a:hover {
+        @include a-hover;
+      }
+
+      &:hover .classfiy-nav-sub {
+        display: block;
+      }
+      .classfiy-nav-sub {
+        display: none;
+        border: $border;
+        border-left: none;
+        box-shadow: rgba(0, 0, 0, .1) 1px 1px 4px;
+        background: #fff;
+        .nav-sub-title {
+          border-bottom: $lightBorder;
+        }
+        dd a {
+          padding: 0 4px;
+          border-right: $border;
+          font-size: $subFontSize;
+          white-space: nowrap;
+          &:last-child {
+            border-right: none;
+          }
+        }
+      }
+    }
+  }
+
+  .lesson-right-show {
+    border: $border;
+    .news {
+      border-bottom: $border;
+      .news-title {
+        font-size: 14px;
+      }
+      .news-list {
+        @include fontStyle(1.8);
+        text-align: left;
+        li {
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          a:hover {
+            @include a-hover;
+
+          }
+
+        }
+      }
+    }
+    .user-login {
+      border-bottom: $border;
+      .login {
+        @include fontStyle(1.8);
+        .login-btn {
+          width: 48px;
+          height: 20px;
+          margin-top: 5px;
+          margin-right: 10px;
+          @include buttonStyle(#FB5D20)
+        }
+        .register-btn {
+          @extend .login-btn;
+          @include buttonStyle
+        }
+      }
+    }
+    .mini-recommand {
+      .recommand-item {
+        &:nth-child(-n+3) {
+          border-right: $lightBorder;
+          border-bottom: $lightBorder;
+        }
+        &:nth-child(4) {
+          border-bottom: $lightBorder;
+        }
+        &:nth-last-child(-n+4) {
+          border-right: $lightBorder;
+        }
+        &:nth-child(8) {
+          border-right: none;
+        }
+        .rd-icon {
+          display: block;
+          width: 25px;
+          height: 25px;
+          background-image: url(../images/recommend.png);
+          background-size: 71px 232px;
+        }
+        .icon-question {
+          background-position: -5px -3px;
+        }
+        .icon-wiki {
+          background-position: -5px -31px;
+        }
+        .icon-lesson {
+          background-position: -5px -59px;
+        }
+        .icon-group {
+          background-position: -5px -87px;
+        }
+        .icon-download {
+          background-position: -5px -117px;
+        }
+        .icon-knowledge {
+          background-position: -5px -144px;
+        }
+        .icon-occupation {
+          background-position: -5px -173px;
+        }
+        .icon-vip {
+          background-position: -5px -202px;
+        }
+        .angle-down {
+          display: block;
+          width: 0;
+          height: 0;
+          border: 6px solid transparent;
+          border-top: 6px solid #e4e4e4;
+          margin: 0 auto;
+        }
+      }
+    }
+  }
+
+}
+
+.recommad-lesson {
+  .re-tab-title {
+    .tab_in {
+      border-bottom: 2px solid $baseColor;
+      @include a-hover;
+      i {
+        display: block;
+        width: 0;
+        height: 0;
+        position: absolute;
+        left: 50%;
+        margin-left: -2.5px;
+        bottom: 0;
+        border: 5px solid transparent;
+        border-bottom-color: $baseColor;
+      }
+    }
+  }
+  .re-tab-box {
+    .tab-box_active {
+      .re-li {
+        cursor: pointer;
+        &:hover p.lesson-text {
+          height: 55px;
+        }
+        &:hover .others {
+          height: 52px;
+        }
+        &:hover .others .left .rank {
+          display: block;
+        }
+        &:hover .others .right .stu-num {
+          display: block;
+        }
+        p {
+          border-left: $border;
+          border-right: $border;
+        }
+
+        p.lesson-title {
+          padding: 10px;
+          line-height: 1.2;
+
+        }
+        p.lesson-text {
+          padding: 0 10px;
+          @include fontStyle;
+          overflow: hidden;
+          transition: height 0.6s ease-out;
+          background: #fff;
+          position: relative;
+          z-index: 200;
+        }
+        .others {
+          @include fontStyle(1.8);
+          text-align: left;
+          border: $border;
+          border-top: none;
+          background: #fff;
+          position: relative;
+          z-index: 200;
+          i {
+            display: inline-block;
+            width: 14px;
+            height: 14px;
+            margin-right: 8px;
+          }
+          .left {
+            width: 120px;
+            float: left;
+            .time-icon {
+              background: url("../images/clok.png") 0 0 no-repeat;
+              background-size: 14px 14px;
+            }
+            .rank {
+              display: none;
+              .rank-icon {
+                background: url("../images/tow-ji.png") 0 0 no-repeat;
+                background-size: 14px 14px;
+
+              }
+            }
+
+          }
+          .right {
+            width: 70px;
+            float: right;
+            .stu-num {
+              display: none;
+            }
+            .lesson-icon {
+              width: 14px;
+              height: 14px;
+              float: right;
+              margin-right: 8px;
+            }
+
+          }
+        }
+      }
+
+    }
+
+  }
+}
+
+.projectPath {
+  .pj-box {
+
+    .pj-card {
+
+      text-align: center;
+
+      &:hover .greenbtn {
+        @include buttonStyleTwo($baseColor, #fff);
+
+      }
+      img {
+        width: 100%;
+        height: 120px;
+        margin-bottom: 24px;
+      }
+      .pj-title {
+        @include h2-font;
+        margin-bottom: 15px;
+      }
+      p {
+        font-size: 13px;
+        line-height: 1.8;
+        font-weight: 500;
+      }
+      .greenbtn {
+        @include buttonStyleTwo(#f3fff6, $baseColor);
+        border: 1px solid $baseColor;
+        margin-top: 15px;
+      }
+
+    }
+
+  }
+}
+
+.knowledgeSystem {
+  .ks-box {
+    .ks-item {
+      //perspective:1000;
+      transform-style: preserve-3d;
+      .ks-item-wrap {
+        display: block;
+        width: 100%;
+        height: 100%;
+        position: relative;
+        transition: 0.6s;
+        transform-style: preserve-3d;
+        .front, .back {
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          top: 0;
+          left: 0;
+          backface-visibility: hidden;
+          padding: 15px;
+          text-align: center;
+        }
+        .front {
+          img {
+            width: 40px;
+          }
+          h2 {
+            @include h2-font;
+          }
+          span {
+            color: $baseColor;
+            font-weight: 500;
+          }
+
+        }
+        .back {
+          transform: rotateY(-180deg);
+          .greenbtn {
+            @include buttonStyleTwo($baseColor, #fff);
+            margin-top: 10px;
+            &:hover {
+              opacity: 0.8;
+            }
+          }
+          background: #f5f5f5;
+          padding-top: 30px;
+          strong {
+            font-style: normal;
+            font-weight: 500;
+            letter-spacing: 1px;
+          }
+        }
+      }
+      &:hover .ks-item-wrap {
+        transform: rotateY(180deg);
+      }
+    }
+  }
+}
+
+.excellent-lesson {
+  .ex-box {
+    .ex-card {
+      &:hover {
+        border: 1px solid $baseColor;
+        .describe {
+          visibility: visible;
+          opacity: 1;
+        }
+      }
+      .ex-title {
+        font-size: 14px;
+        font-weight: 500;
+        letter-spacing: 1px;
+        margin-bottom: 10px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+      img {
+        width: 201px;
+        height: 160px;
+      }
+
+      .other {
+        margin-top: 10px;
+        font-size: 12px;
+        position: relative;
+        z-index: 100;
+        .collect {
+          float: right;
+          .collect-btn {
+            @include buttonStyle($baseColor, #fff);
+            border-radius: 2px;
+            padding: 0 10px;
+            margin-right: 5px;
+            &:hover {
+              opacity: 0.8;
+            }
+          }
+        }
+      }
+      .describe {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        border: 1px solid $baseColor;
+        z-index: 10;
+        background: rgba(255, 255, 255, .9);
+        text-align: center;
+        visibility: hidden;
+        opacity: 0;
+        transition: .3s;
+        overflow: hidden;
+
+        .picture {
+          position: absolute;
+          top: 20px;
+          left: 50%;
+          margin-left: -25px;
+          width: 50px;
+          height: 50px;
+          border-radius: 50%;
+          overflow: hidden;
+          cursor: pointer;
+          img {
+            width: 100%;
+            height: 100%;
+          }
+        }
+        .name {
+          position: absolute;
+          top: 74px;
+          left: 0;
+          width: 100%;
+          cursor: pointer;
+        }
+        .text {
+          position: absolute;
+          top: 100px;
+          left: 0;
+          width: 100%;
+          height: 40px;
+          padding: 0 16px;
+          text-align: left;
+          overflow: hidden;
+          line-height: 20px;
+          word-wrap: break-word;
+          word-break: break-all;
+          cursor: pointer;
+        }
+        .greenbtn {
+          @include buttonStyleTwo($baseColor, #fff);
+          position: absolute;
+          top: 164px;
+          left: 50%;
+          margin-left: -70px;
+          &:hover {
+            opacity: 0.8;
+          }
+        }
+
+      }
+    }
+  }
+}
+
+.wiki {
+  .wiki-box {
+    .wiki-card {
+      .wiki-title {
+        font-size: 14px;
+        font-weight: 500;
+        letter-spacing: 1px;
+        margin-bottom: 10px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+      dl {
+        dd {
+          a {
+            &:hover h3 {
+              @include a-hover;
+            }
+            &:hover span {
+              @include a-hover;
+            }
+            .imgbox {
+              width: 140px;
+              height: 200px;
+              position: relative;
+              border-radius: 5px;
+              background: #999;
+              &:hover .look {
+                display: block;
+              }
+              .look {
+                width: 40px;
+                height: 20px;
+                z-index: 10;
+                display: none;
+                position: absolute;
+                right: -10px;
+                top: -13px;
+                background: url("../images/look.png") center center no-repeat;
+                background-size: 100% 100%;
+              }
+            }
+            .fengmian {
+              width: 100%;
+              height: 100%;
+              &:hover {
+                animation: ffk-animate 1s ease forwards;
+                transform-origin: 0 0 0;
+              }
+            }
+            @keyframes ffk-animate {
+              from {
+                transform: rotateY(0deg);
+              }
+              to {
+                transform: rotateY(-20deg);
+              }
+
+            }
+          }
+          h3 {
+            @extend .wiki-title;
+            width: 140px;
+            margin: 0;
+            padding: 0;
+            line-height: 1.5;
+          }
+        }
+      }
+      ul {
+        @include fontStyle(2.0);
+        li {
+          a {
+            &:hover p {
+              @include a-hover;
+            }
+            &:hover span {
+              @include a-hover;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.footer {
+  a:hover {
+    @include a-hover;
+  }
+
+  .jkinfor-block {
+    dl {
+      dt {
+        a {
+          font-size: 14px;
+          line-height: 30px;
+        }
+      }
+      dd {
+        a {
+          font-size: 13px;
+          line-height: 26px;
+        }
+      }
+
+    }
+    .search-share {
+      .jktxt {
+        font-size: 15px;
+        color: #35b558;
+        display: block;
+        margin-bottom: 15px;
+        font-weight: 500;
+        text-align: center;
+      }
+      a:hover strong {
+        @include a-hover;
+      }
+      a:hover h5 {
+        @include a-hover;
+      }
+      a:hover p {
+        @include a-hover;
+      }
+    }
+    .app-download .dow {
+      display: inline-block;
+      margin-left: 15px;
+      font-size: 18px;
+      color: #000;
+    }
+    .share {
+      margin-top: 15px;
+      height: 30px;
+      a {
+        background: url("../images/icon.png") -23px 0 no-repeat;
+        width: 32px;
+        height: 32px;
+        display: inline-block;
+        float: left;
+        margin-right: 10px;
+        position: relative;
+      }
+      .sina-icon {
+        background-position: -23px 0;
+        &:hover {
+          background-position: -23px -40px;
+        }
+      }
+      .tieba-icon {
+        background-position: -145px 0;
+        &:hover {
+          background-position: -145px -40px;
+        }
+      }
+      .qq-icon {
+        background-position: -23px -82px;
+        &:hover {
+          background-position: -23px -122px;
+        }
+
+      }
+
+    }
+    .kefu-online {
+      margin-top: 15px;
+      .kefu-icon {
+        width: 40px;
+        height: 40px;
+        display: inline-block;
+        background: url("../images/kefu.png") no-repeat -40px 0/80px 40px;
+        margin-right: 5px;
+      }
+      .online {
+        background-position: 0 0;
+      }
+      .contact {
+        display: inline-block;
+      }
+      h5 {
+        font-size: 13px;
+        font-style: normal;
+        word-spacing: 1px;
+        font-weight: normal;
+      }
+      p {
+        @extend h5;
+      }
+    }
+  }
+
+  .copyright {
+    line-height: 55px;
+    * {
+      color: #999;
+      font-size: 13px;
+      white-space: nowrap;
+      text-align: center;
+    }
+  }
+
+}
+
+//置顶按钮
+.gotop {
+  position: fixed;
+  left: 50%;
+  margin-left: 515px;
+  bottom: 80px;
+  width: 34px;
+  text-align: center;
+  z-index: 2000;
+  cursor: pointer;
+  .top {
+    display: block;
+    background: url(../images/gotop.jpg) 0 0 no-repeat;
+    background-size: 34px 103px;
+    width: 34px;
+    height: 34px;
+  }
+  &:hover .top {
+    background: url(../images/gotop2.jpg) 0 0 no-repeat;
+    background-position: 0 0;
+    background-size: 34px 103px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
