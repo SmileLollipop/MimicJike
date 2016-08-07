@@ -1,7 +1,7 @@
 # MimicJike  
 这是一个模拟版的静态极客学院首页
 
-https://pzai01.github.io/demo/
+https://missfish.github.io/demo/
 
 
 使用 `HTML` 搭建页面框架，`Sass` 预编译 `CSS` 样式，编写 `jQuery` 来实现页面动态效果
