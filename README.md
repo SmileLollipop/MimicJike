@@ -1,3 +1,3 @@
 # MimicJike
 
-（https://pzai01.github.io/demo/）
+https://pzai01.github.io/demo/
