@@ -1,4 +1,5 @@
-# MimicJike   这是一个模拟版的静态极客学院首页
+# MimicJike  
+这是一个模拟版的静态极客学院首页
 
 https://pzai01.github.io/demo/
 
